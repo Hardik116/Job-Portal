@@ -7,7 +7,7 @@ const fs = require("fs");
 
 // MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/jobPortal", {
+  .connect("mongodb+srv://hardikr840:mObhQ0RxCpZONtxp@cluster0.twsuwwr.mongodb.net/jobportal?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -43,6 +43,10 @@ app.use("/auth", require("./routes/authRoutes"));
 app.use("/api", require("./routes/apiRoutes"));
 app.use("/upload", require("./routes/uploadRoutes"));
 app.use("/host", require("./routes/downloadRoutes"));
+
+app.get("/",()=>{
+  console.log("hello")
+})
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}!`);
