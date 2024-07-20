@@ -44,8 +44,8 @@ app.use("/api", require("./routes/apiRoutes"));
 app.use("/upload", require("./routes/uploadRoutes"));
 app.use("/host", require("./routes/downloadRoutes"));
 
-app.get("/",()=>{
-  console.log("hello")
+app.get("/",(req, res)=>{
+  return res.send({msg:"hello"})
 })
 
 app.listen(port, () => {
